@@ -1,7 +1,10 @@
 # Final Project SO S3
 Tugas Akhir Sistem Operasi
+WEB SERVER
 
 # SSH Server
+## Installasi SSV Server
+Install OpenSSH server
 ## Config Server
 This is a guide to install a server for an **Ubuntu 14 LTS** server. You could likely use different versions.
 
