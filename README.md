@@ -1,14 +1,22 @@
 # Final Project SO S3
 Tugas Akhir Sistem Operasi
+SSH SERVER
 WEB SERVER
 
-# SSH Server
-## Installasi SSV Server
-Install OpenSSH server
-## Config Server
-This is a guide to install a server for an **Ubuntu 14 LTS** server. You could likely use different versions.
+# Machine
+- CPU		: AMD A12-9720p Quad Core 2.7GHz
+- Memory	: 8GB
+- Storage	: 500GB
+- OS		: Ubuntu 22.04 WSL Windows 10 Pro 21H2
 
----
+# SSH Server
+## Installasi dan Konfigurasi SSH Server
+Install OpenSSH Server
+    sudo apt install openssh-server
+    sudo apt update
+
+Konfigurasi OpenSSH server
+---------------------------------------------------------------------------------
 
 ## Table of Contents
 - [Security](#security)
@@ -32,7 +40,7 @@ This is a guide to install a server for an **Ubuntu 14 LTS** server. You could l
 
 ---
 #Security
-These are necessities to keep your server secure. Not everything will be covered but some of the most important.
+Keamanan dasar.
 
 ###Update
 With any new installation you want to update!
@@ -54,26 +62,37 @@ See your Firewall Rules:
     sudo ufw status verbose
 
 ###SSH and Users
-You should first create a **non-root** user. Since default logins are root on port 22:
+You should first create a **non-root** user. Since default logins are root on port 23:
 
-    sudo useradd -m -s /bin/bash user1
-    passwd user1
+    sudo useradd -m -s /bin/bash leviea
+    passwd leviea
 
-We need **user1** him to be a **super-user (su)**. Add your in visudo:
+We need **acedia** him to be a **super-user (su)**. Add your in visudo:
 
     $ visudo
     --------
     # User privilege specification
     root    ALL=(ALL:ALL) ALL
-    user1   ALL=(ALL:ALL) ALL
+    leviea   ALL=(ALL:ALL) ALL
 
 #####Change Default SSH Port
-To change the default port of `22` to something else of your choice:
+Membuka dan mengubah Port yang
 
     $ sudo vim /etc/ssh/sshd_config
     -------------------------------
-    Port 22              # Change to: 1234
-    PermitRootLogin yes  # Change to: no
+    Port 23   # TCP
+    Port 80   # http
+    Port 443  # HTTPs
+    Port 989  # FTPS data 
+    Port 990  # FTPS Control
+    Port 3306 # SQL
+    
+    PermitRootLogin no
+    PrintMotd yes
+    PubkeyAuthentication yes
+    UsePAM yes
+    X11Forwarding yes
+    
 
 Reload SSH Configuration:
 
@@ -82,16 +101,17 @@ Reload SSH Configuration:
 #####Make Sure You can Login
 Test your new user by keeping your current terminal connected and opening a second terminal:
 
-    ssh user1@ip_address -p1234
+    ssh leviea@IP_Address -p23
 
 Also make sure you can use sudo, so type `su -`
 
 #####User SSH Login
 ---
 
-As your new user (**user1**), if you want to login with an SSH key, make sure you have a key on your **local** machine.
+As your new user (**leviea**), if you want to login with an SSH key, make sure you have a key on your **local** machine.
 
     ssh-keygen -t rsa -b 4096 -C "your-email@domain.com"
+file key tersiman di /root dengan nama key dan dipindak he ~/.ssh
 
 Create your **remote** SSH folder and authorized_keys. Paste your `id_rsa.pub`to authorized_host:
 
