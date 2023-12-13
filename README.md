@@ -7,8 +7,7 @@ WEB SERVER
 - CPU		: AMD A12-9720p Quad Core 2.7GHz
 - Memory	: 8GB
 - Storage	: 500GB
-- OS		: Ubuntu 22.04 WSL Windows 10 Pro 21H2
-
+- OS		: Ubuntu 22.04
 # SSH Server
 ## Installasi dan Konfigurasi SSH Server
 Install OpenSSH Server
