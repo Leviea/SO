@@ -53,12 +53,18 @@ UFW is the uncomplicated firewall.
     sudo ufw enable
     sudo ufw allow 80
     sudo ufw allow 443
-    sudo ufw allow ssh
-    sudo ufw allow 911 <or any number>
+    sudo ufw allow 22
+    sudo ufw allow 8080
+    sudo ufw allow 3306
+    sudo ufw Port 23
+    sudo ufw allow 989
+    sudo ufw allow 990
+    
 
-See your Firewall Rules:
+Reload Firewall Rules:
 
-    sudo ufw status verbose
+    sudo ufw reload
+    sudo ufw status
 
 ###SSH and Users
 You should first create a **non-root** user. Since default logins are root on port 23:
@@ -66,14 +72,24 @@ You should first create a **non-root** user. Since default logins are root on po
     sudo useradd -m -s /bin/bash leviea
     passwd leviea
 
-We need **acedia** him to be a **super-user (su)**. Add your in visudo:
+We need **leviea** him to be a **super-user (su)**. Add your in visudo:
 
     $ visudo
     --------
     # User privilege specification
     root    ALL=(ALL:ALL) ALL
     leviea   ALL=(ALL:ALL) ALL
-
+#####Repository lokal
+    
+    $ sudo vim /etc/apt/sources.list
+    -------------------------------
+    deb http://kebo.pens.ac.id/ubuntu/ jammy main restricted universe multiverse
+    deb http://kebo.pens.ac.id/ubuntu/ jammy-updates main restricted universe multiverse
+    deb http://kebo.pens.ac.id/ubuntu/ jammy-security main restricted universe multiverse
+    deb http://kebo.pens.ac.id/ubuntu/ jammy-backports main restricted universe multiverse
+    deb http://kebo.pens.ac.id/ubuntu/ jammy-proposed main restricted universe multiverse
+    $ sudo apt update && upgrade -y
+    
 #####Change Default SSH Port
 Membuka dan mengubah Port yang
 
@@ -86,7 +102,7 @@ Membuka dan mengubah Port yang
     Port 990  # FTPS Control
     Port 3306 # SQL
     
-    PermitRootLogin no
+    PermitRootLogin yes
     PrintMotd yes
     PubkeyAuthentication yes
     UsePAM yes
@@ -95,6 +111,8 @@ Membuka dan mengubah Port yang
 
 Reload SSH Configuration:
 
+    sudo service ssh start
+    sudo service ssh enable
     sudo service ssh reload
 
 #####Make Sure You can Login
@@ -365,6 +383,8 @@ Other ways to check ports
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that notice appear in all copies.
 
 &copy;2016 MIT License | Jesse Boyer | JREAM.com
+
+=============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
 
 # WEB SERVER
 ## Ubuntu-22.04-Web-Server-Setup
