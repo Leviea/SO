@@ -1,6 +1,6 @@
-# Final Project SO S3
-Tugas Akhir Sistem Operasi
-SSH SERVER
+# Final Project Sistem Operasi
+Service
+SSH 
 WEB SERVER
 
 # Machine
@@ -8,6 +8,7 @@ WEB SERVER
 - Memory	: 8GB
 - Storage	: 500GB
 - OS		: Ubuntu 22.04
+  
 # SSH Server
 ## Installasi dan Konfigurasi SSH Server
 Install OpenSSH Server
