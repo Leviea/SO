@@ -1,7 +1,8 @@
 # Final Project Sistem Operasi
 Service
 SSH 
-WEB SERVER
+Web Server
+MySQL
 
 # Machine
 - CPU		: AMD A12-9720p Quad Core 2.7GHz
