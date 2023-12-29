@@ -106,6 +106,7 @@ Test your new user by keeping your current terminal connected and opening a seco
 
 Also make sure you can use sudo, so type `su -`
 
+![ssh](https://raw.githubusercontent.com/Leviea/SO/main/Web/Screenshot%20(620).png)
 
 
 
@@ -235,6 +236,16 @@ By default, Apache is configured to start automatically when the server boots. I
 To re-enable the service to start up at boot, run:
 
     sudo systemctl enable apache2
+copy File HTML web-main to var/ww/html
 
+    cp `/Documents/web-main var/www/html
+    
 
-![ssh](url)
+![Login]([url](https://raw.githubusercontent.com/Leviea/SO/main/Web/Screenshot%20(611).png))
+![select](https://raw.githubusercontent.com/Leviea/SO/main/Web/Screenshot%20(614).png)
+![Select](https://raw.githubusercontent.com/Leviea/SO/main/Web/Screenshot%20(612).png)
+![Select](https://raw.githubusercontent.com/Leviea/SO/main/Web/Screenshot%20(613).png)
+![Ruang](https://raw.githubusercontent.com/Leviea/SO/main/Web/Screenshot%20(615).png)
+![Book](https://raw.githubusercontent.com/Leviea/SO/main/Web/Screenshot%20(616).png)
+![berhasil](https://raw.githubusercontent.com/Leviea/SO/main/Web/Screenshot%20(617).png)
+![Password](https://raw.githubusercontent.com/Leviea/SO/main/Web/Screenshot%20(618).png)
