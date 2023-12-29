@@ -21,23 +21,6 @@ Konfigurasi OpenSSH server
 
 ## Table of Contents
 - [Security](#security)
-    - [Update](#update)
-    - [Firewall UFW](#firewall-ufw)
-    - [SSH and Users](#ssh-and-users)
-    - [Fail2Ban](#fail2ban)
-    - [Rootkits](#rootkits)
-    - [Unattended Upgrades](#unattended-upgrades)
-    - [Apache2 Mod-Evasive](#apache2-mod-evasive)
-- [Packages](#packages)
-    - [Common Items](#common-items)
-    - [Enable PPA Repositories](#enable-ppa-repositories)
-- [Commands](#commands)
-    - [SSH Welcome Message](#ssh-welcome-message)  
-    - [Searching](#searching)
-    - [User Management](#user-management)
-    - [SFTP User](#sftp-user)
-- [Manage Network Scripts](#manage-network-scripts)
-    - [Checking Ports](#checking-ports)
 
 ---
 #Security
@@ -46,8 +29,7 @@ Keamanan dasar.
 ###Update
 With any new installation you want to update!
 
-    sudo apt-get update
-    sudo apt-get upgrade -y
+    sudo apt-get update && upgrade -y
 
 ###Firewall UFW
 UFW is the uncomplicated firewall.
